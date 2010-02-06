@@ -59,6 +59,7 @@
          <file role="data" name="sfValidatorBlacklist.class.php" />
          <file role="data" name="sfValidatorReCaptcha.class.php" />
          <file role="data" name="sfValidatorSchemaTimeInterval.class.php" />
+         <file role="data" name="sfValidatorDefault.class.php" />
        </dir>
        <dir name="widget">
          <file role="data" name="sfWidgetFormDoctrineChoiceGrouped.class.php" />
@@ -83,6 +84,7 @@
          <file role="data" name="sfValidatorReCaptchaTest.php" />
          <file role="data" name="sfValidatorBlacklistTest.php" />
          <file role="data" name="sfValidatorSchemaTimeIntervalTest.php" />
+         <file role="data" name="sfValidatorDefaultTest.php" />
        </dir>
        <dir name="widget">
          <file role="data" name="sfWidgetFormReCaptchaTest.php" />

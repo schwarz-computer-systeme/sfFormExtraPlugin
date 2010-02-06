@@ -45,6 +45,7 @@ Validators
   * sfValidatorReCaptcha: Validates a ReCaptcha (see sfWidgetFormReCaptcha)
   * sfValidatorBlacklist: Validates that a value is not one of the configured forbidden ones
   * sfValidatorSchemaTimeInterval: Validates a time interval between two dates provided by a widget schema
+  * sfValidatorDefault: Returns a default value rather than throwing an error
 
 Widgets
 -------
