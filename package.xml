@@ -132,6 +132,22 @@
  <changelog>
    <release>
      <version>
+       <release>1.1.2</release>
+       <api>1.0.0</api>
+     </version>
+     <stability>
+       <release>stable</release>
+       <api>stable</api>
+     </stability>
+     <license uri="http://www.symfony-project.com/license">MIT license</license>
+     <date>someday</date>
+     <license>MIT</license>
+     <notes>
+       * Kris.Wallsmith: fixed reading of can_be_empty option in sfWidgetFormJQueryDate
+     </notes>
+   </release>
+   <release>
+     <version>
        <release>1.1.1</release>
        <api>1.0.0</api>
      </version>
