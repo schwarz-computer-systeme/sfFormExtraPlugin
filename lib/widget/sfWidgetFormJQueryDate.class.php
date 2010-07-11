@@ -122,7 +122,7 @@ EOF
       $prefix,
       $this->generateId($name.'[year]'), $this->generateId($name.'[month]'),
       $this->generateId($name.'[day]'), $this->generateId($name.'[day]'),
-      ($this->getOption('can_be_empty') ? 'daysInMonth' : 'daysInMonth - 1'),
+      ($this->getOption('date_widget')->getOption('can_be_empty') ? 'daysInMonth' : 'daysInMonth - 1'),
       $this->generateId($name.'[day]'), $this->generateId($name.'[day]'),
       $id,
       min($this->getOption('date_widget')->getOption('years')), max($this->getOption('date_widget')->getOption('years')),
