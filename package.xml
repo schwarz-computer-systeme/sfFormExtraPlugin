@@ -28,9 +28,9 @@
   <email>hugo.hamon@sensio.com</email>
   <active>yes</active>
  </developer>
- <date>2009-11-30</date>
+ <date>2010-08-03</date>
  <version>
-   <release>1.1.1</release>
+   <release>1.1.2</release>
    <api>1.0.0</api>
  </version>
  <stability>
@@ -143,7 +143,11 @@
      <date>someday</date>
      <license>MIT</license>
      <notes>
-       * Kris.Wallsmith: fixed reading of can_be_empty option in sfWidgetFormJQueryDate
+       * 
+       * Kris.Wallsmith: added sfValidatorDefault, which returns a default value rather than throw an error
+       * Kris.Wallsmith: fixed blacklist validator test
+       * FabianLange: fixed incorrect octal parsing of dates in javascript (#7743)
+       * Kris.Wallsmith: fixed reading of can_be_empty option in sfWidgetFormJQueryDate (#8723)
      </notes>
    </release>
    <release>
