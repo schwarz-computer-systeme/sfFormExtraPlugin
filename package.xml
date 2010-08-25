@@ -143,6 +143,7 @@
      <date>2010-08-25</date>
      <license>MIT</license>
      <notes>
+       * Fabien: fixed sfWidgetFormJQueryDate doesn't refresh "disabled" after the date was chosen from calendar (#8817)
        * Xavier: fixed sfWidgetFormJQueryDate doesn't restrict values on page load (#7792)
        * Fabien: fixed JS function names when the widget name contains - (#8836)
        * Fabien: added support for sfWidgetFormDateTime in sfWidgetFormJQueryDate (#8950)

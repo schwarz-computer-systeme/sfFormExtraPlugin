@@ -95,11 +95,14 @@ class sfWidgetFormJQueryDate extends sfWidgetForm
     jQuery("#%s").val(parseInt(date.substring(0, 4), 10));
     jQuery("#%s").val(parseInt(date.substring(5, 7), 10));
     jQuery("#%s").val(parseInt(date.substring(8), 10));
+
+    wfd_%s_check_linked_days();
   }
 
   function wfd_%s_check_linked_days()
   {
     var daysInMonth = 32 - new Date(jQuery("#%s").val(), jQuery("#%s").val() - 1, 32).getDate();
+
     jQuery("#%s option").attr("disabled", "");
     jQuery("#%s option:gt(" + (%s) +")").attr("disabled", "disabled");
 
@@ -129,7 +132,7 @@ EOF
       $this->generateId($name.'[year]'), $this->generateId($name.'[month]'), $this->generateId($name.'[day]'),
       $prefix,
       $this->generateId($name.'[year]'), $this->generateId($name.'[month]'), $this->generateId($name.'[day]'),
-      $prefix,
+      $prefix, $prefix,
       $this->generateId($name.'[year]'), $this->generateId($name.'[month]'),
       $this->generateId($name.'[day]'), $this->generateId($name.'[day]'),
       ($this->getOption('date_widget')->getOption('can_be_empty') ? 'daysInMonth' : 'daysInMonth - 1'),
