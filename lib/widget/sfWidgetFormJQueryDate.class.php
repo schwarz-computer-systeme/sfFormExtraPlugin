@@ -62,7 +62,7 @@ class sfWidgetFormJQueryDate extends sfWidgetForm
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    $prefix = $this->generateId($name);
+    $prefix = str_replace('-', '_', $this->generateId($name));
 
     $image = '';
     if (false !== $this->getOption('image'))
