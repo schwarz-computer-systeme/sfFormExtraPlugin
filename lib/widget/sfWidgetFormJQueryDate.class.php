@@ -118,6 +118,7 @@ class sfWidgetFormJQueryDate extends sfWidgetForm
       showOn:     "button"
       %s
     }, jQuery.datepicker.regional["%s"], %s, {dateFormat: "yy-mm-dd"}));
+    wfd_%s_check_linked_days();
   });
 
   jQuery("#%s, #%s, #%s").change(wfd_%s_check_linked_days);
@@ -136,6 +137,7 @@ EOF
       $id,
       min($years), max($years),
       $prefix, $prefix, $image, $this->getOption('culture'), $this->getOption('config'),
+      $prefix,
       $this->generateId($name.'[day]'), $this->generateId($name.'[month]'), $this->generateId($name.'[year]'),
       $prefix
     );
