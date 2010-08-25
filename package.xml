@@ -143,6 +143,7 @@
      <date>2010-08-25</date>
      <license>MIT</license>
      <notes>
+       * xavier: allowed unassociated list to be left of the associated one (#7780)
        * Fabien: added culture and theme options for sfWidgetFormReCaptcha (#8509)
        * Fabien: updated the autocomplete JavaScript to the latest version
        * Fabien: fixed sfWidgetFormJQueryDate doesn't refresh "disabled" after the date was chosen from calendar (#8817)

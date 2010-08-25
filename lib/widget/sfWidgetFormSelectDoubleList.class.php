@@ -35,6 +35,7 @@ class sfWidgetFormSelectDoubleList extends sfWidgetForm
    *  * label_associated:   The label for associated
    *  * unassociate:        The HTML for the unassociate link
    *  * associate:          The HTML for the associate link
+   *  * associated_first:   Whether the associated list if first (true by default)
    *  * template:           The HTML template to use to render this widget
    *                        The available placeholders are:
    *                          * label_associated
@@ -56,24 +57,42 @@ class sfWidgetFormSelectDoubleList extends sfWidgetForm
 
     $this->addOption('class', 'double_list');
     $this->addOption('class_select', 'double_list_select');
+    $this->addOption('associated_first', true);
     $this->addOption('label_unassociated', 'Unassociated');
     $this->addOption('label_associated', 'Associated');
-    $this->addOption('unassociate', '<img src="/sfFormExtraPlugin/images/next.png" alt="unassociate" />');
-    $this->addOption('associate', '<img src="/sfFormExtraPlugin/images/previous.png" alt="associate" />');
+    $associated_first = isset($options['associated_first']) ? $options['associated_first'] : true;
+
+    if ($associated_first)
+    {
+      $associate_image = 'previous.png';
+      $unassociate_image = 'next.png';
+      $float = 'left';
+    }
+    else
+    {
+      $associate_image = 'next.png';
+      $unassociate_image = 'previous.png';
+      $float = 'right';
+    }
+
+    $this->addOption('unassociate', '<img src="/sfFormExtraPlugin/images/'.$unassociate_image.'" alt="unassociate" />');
+    $this->addOption('associate', '<img src="/sfFormExtraPlugin/images/'.$associate_image.'" alt="associate" />');
     $this->addOption('template', <<<EOF
 <div class="%class%">
   <div style="float: left">
-    <div class="double_list_label">%label_associated%</div>
-    %associated%
-  </div>
-  <div style="float: left; margin-top: 2em">
-    %associate%
-    <br />
-    %unassociate%
-  </div>
-  <div style="float: left">
-    <div class="double_list_label">%label_unassociated%</div>
-    %unassociated%
+    <div style="float: $float">
+      <div class="double_list_label">%label_associated%</div>
+      %associated%
+    </div>
+    <div style="float: $float; margin-top: 2em">
+      %associate%
+      <br />
+      %unassociate%
+    </div>
+    <div style="float: $float">
+      <div class="double_list_label">%label_unassociated%</div>
+      %unassociated%
+    </div>
   </div>
   <br style="clear: both" />
   <script type="text/javascript">
