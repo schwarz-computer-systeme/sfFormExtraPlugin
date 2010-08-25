@@ -103,7 +103,7 @@ class sfFormLanguage extends sfForm
     ));
 
     $this->setWidgets(array(
-      'language' => new sfWidgetFormI18nChoiceLanguage(array('languages' => $this->options['languages'])),
+      'language' => new sfWidgetFormI18nChoiceLanguage(array('culture' => $this->user->getCulture(), 'languages' => $this->options['languages'])),
     ));
   }
 }
