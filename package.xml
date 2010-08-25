@@ -28,9 +28,9 @@
   <email>hugo.hamon@sensio.com</email>
   <active>yes</active>
  </developer>
- <date>2010-08-03</date>
+ <date>2010-08-25</date>
  <version>
-   <release>1.1.2</release>
+   <release>1.1.3</release>
    <api>1.0.0</api>
  </version>
  <stability>
@@ -132,6 +132,22 @@
  <changelog>
    <release>
      <version>
+       <release>1.1.3</release>
+       <api>1.0.0</api>
+     </version>
+     <stability>
+       <release>stable</release>
+       <api>stable</api>
+     </stability>
+     <license uri="http://www.symfony-project.com/license">MIT license</license>
+     <date>2010-08-25</date>
+     <license>MIT</license>
+     <notes>
+       * Fabien: added support for sfWidgetFormDateTime in sfWidgetFormJQueryDate (#8950)
+     </notes>
+   </release>
+   <release>
+     <version>
        <release>1.1.2</release>
        <api>1.0.0</api>
      </version>
@@ -140,10 +156,9 @@
        <api>stable</api>
      </stability>
      <license uri="http://www.symfony-project.com/license">MIT license</license>
-     <date>someday</date>
+     <date>2010-08-03</date>
      <license>MIT</license>
      <notes>
-       * 
        * Kris.Wallsmith: added sfValidatorDefault, which returns a default value rather than throw an error
        * Kris.Wallsmith: fixed blacklist validator test
        * FabianLange: fixed incorrect octal parsing of dates in javascript (#7743)

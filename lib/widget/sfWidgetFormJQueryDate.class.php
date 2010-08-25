@@ -70,6 +70,15 @@ class sfWidgetFormJQueryDate extends sfWidgetForm
       $image = sprintf(', buttonImage: "%s", buttonImageOnly: true', $this->getOption('image'));
     }
 
+    if ($this->getOption('date_widget') instanceof sfWidgetFormDateTime)
+    {
+      $years = $this->getOption('date_widget')->getDateWidget()->getOption('years');
+    }
+    else
+    {
+      $years = $this->getOption('date_widget')->getOption('years');
+    }
+
     return $this->getOption('date_widget')->render($name, $value, $attributes, $errors).
            $this->renderTag('input', array('type' => 'hidden', 'size' => 10, 'id' => $id = $this->generateId($name).'_jquery_control', 'disabled' => 'disabled')).
            sprintf(<<<EOF
@@ -125,7 +134,7 @@ EOF
       ($this->getOption('date_widget')->getOption('can_be_empty') ? 'daysInMonth' : 'daysInMonth - 1'),
       $this->generateId($name.'[day]'), $this->generateId($name.'[day]'),
       $id,
-      min($this->getOption('date_widget')->getOption('years')), max($this->getOption('date_widget')->getOption('years')),
+      min($years), max($years),
       $prefix, $prefix, $image, $this->getOption('culture'), $this->getOption('config'),
       $this->generateId($name.'[day]'), $this->generateId($name.'[month]'), $this->generateId($name.'[year]'),
       $prefix
