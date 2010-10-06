@@ -81,7 +81,12 @@ class sfWidgetFormJQueryAutocompleter extends sfWidgetFormInput
         return parsed;
       }
     }, %s))
-    .result(function(event, data) { jQuery("#%s").val(data[1]); });
+    .result(function(event, data) { jQuery("#%s").val(data[1]); })
+    .keyup(function() {
+      if(this.value.length == 0) {
+        $('#%s').val('');
+      }
+    });
   });
 </script>
 EOF
@@ -89,6 +94,7 @@ EOF
       $this->generateId('autocomplete_'.$name),
       $this->getOption('url'),
       $this->getOption('config'),
+      $this->generateId($name),
       $this->generateId($name)
     );
   }
