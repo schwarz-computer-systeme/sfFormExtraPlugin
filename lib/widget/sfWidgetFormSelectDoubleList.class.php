@@ -145,14 +145,17 @@ EOF
     $size = isset($attributes['size']) ? $attributes['size'] : (isset($this->attributes['size']) ? $this->attributes['size'] : 10);
 
     $associatedWidget = new sfWidgetFormSelect(array('multiple' => true, 'choices' => $associated), array('size' => $size, 'class' => $this->getOption('class_select').'-selected'));
+    $associatedWidget->setParent($this->getParent());
+
     $unassociatedWidget = new sfWidgetFormSelect(array('multiple' => true, 'choices' => $unassociated), array('size' => $size, 'class' => $this->getOption('class_select')));
+    $unassociatedWidget->setParent($this->getParent());
 
     return strtr($this->getOption('template'), array(
       '%class%'              => $this->getOption('class'),
       '%class_select%'       => $this->getOption('class_select'),
       '%id%'                 => $this->generateId($name),
-      '%label_associated%'   => $this->getOption('label_associated'),
-      '%label_unassociated%' => $this->getOption('label_unassociated'),
+      '%label_associated%'   => $this->translate($this->getOption('label_associated')),
+      '%label_unassociated%' => $this->translate($this->getOption('label_unassociated')),
       '%associate%'          => sprintf('<a href="#" onclick="%s">%s</a>', 'sfDoubleList.move(\'unassociated_'.$this->generateId($name).'\', \''.$this->generateId($name).'\'); return false;', $this->getOption('associate')),
       '%unassociate%'        => sprintf('<a href="#" onclick="%s">%s</a>', 'sfDoubleList.move(\''.$this->generateId($name).'\', \'unassociated_'.$this->generateId($name).'\'); return false;', $this->getOption('unassociate')),
       '%associated%'         => $associatedWidget->render($name),
