@@ -60,7 +60,6 @@ class sfWidgetFormSelectDoubleList extends sfWidgetForm
     $this->addOption('associated_first', true);
     $this->addOption('label_unassociated', 'Unassociated');
     $this->addOption('label_associated', 'Associated');
-    $this->addOption('translate_choices', false);
     $associated_first = isset($options['associated_first']) ? $options['associated_first'] : true;
 
     if ($associated_first)
