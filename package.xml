@@ -130,6 +130,22 @@
  </phprelease>
 
  <changelog>
+     <release>
+       <version>
+         <release>1.1.4</release>
+         <api>1.0.0</api>
+       </version>
+       <stability>
+         <release>stable</release>
+         <api>stable</api>
+       </stability>
+       <license uri="http://www.symfony-project.com/license">MIT license</license>
+       <date>201X-XX-XX</date>
+       <license>MIT</license>
+       <notes>
+         * Fabien: fixed recaptcha URLs (closes #9788)
+       </notes>
+     </release>
    <release>
      <version>
        <release>1.1.3</release>
