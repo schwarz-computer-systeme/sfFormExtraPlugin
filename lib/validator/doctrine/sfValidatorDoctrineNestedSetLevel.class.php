@@ -109,7 +109,7 @@ class sfValidatorDoctrineNestedSetLevel extends sfValidatorBase
    */
   protected function getDoctrineTable()
   {
-    return Doctrine::getTable($this->getOption('model'));
+    return Doctrine_Core::getTable($this->getOption('model'));
   }
   
   /**

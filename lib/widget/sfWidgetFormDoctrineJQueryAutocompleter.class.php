@@ -59,7 +59,7 @@ class sfWidgetFormDoctrineJQueryAutocompleter extends sfWidgetFormJQueryAutocomp
     $object = null;
     if ($value != null)
     {
-      $class = Doctrine::getTable($this->getOption('model'));
+      $class = Doctrine_Core::getTable($this->getOption('model'));
       $method = $this->getOption('method_for_query');
 
       $object = call_user_func(array($class, $method), $value);
